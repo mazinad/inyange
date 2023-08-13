@@ -93,20 +93,28 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
             </a>
           </li> -->
           <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" th:href="@{/index}">
               <span class="menu-icon">
-                <i class="mdi mdi-laptop"></i>
+                <i class="mdi mdi-domain"></i>
               </span>
-              <span class="menu-title">View</span>
-              <i class="menu-arrow"></i>
+              <span class="menu-title">Main page</span>
             </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" th:href="@{/api/school/addNewSchool}">Add School</a></li>
-                <li class="nav-item"> <a class="nav-link" th:href="@{/api/school/addNewSchool}">View School</a></li>
-                <!-- <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li> -->
-              </ul>
-            </div>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" th:href="@{/api/school/addNewSchool}">
+              <span class="menu-icon">
+                <i class="mdi mdi-school"></i>
+              </span>
+              <span class="menu-title">Add new School</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" th:href="@{/api/school/all}">
+              <span class="menu-icon">
+                <i class="mdi mdi-school"></i>
+              </span>
+              <span class="menu-title">View School</span>
+            </a>
           </li>
           <!-- <li class="nav-item menu-items">
             <a class="nav-link" href="pages/forms/basic_elements.html">
@@ -216,7 +224,9 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
                         <input type="text" class="form-control" th:field="*{district}" style="background-color: #ffffff; color: #000000;" />
                       </div>
                       <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                      <button class="btn btn-dark">Cancel</button>
+                      <button class="btn btn-dark">
+                        <a th:href="@{/api/school/all}" style="text-decoration: none; color: inherit;">Cancel</a>
+                    </button>
                     </form>
                   </div>
                 </div>

@@ -93,7 +93,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
             </a>
           </li> -->
           <li class="nav-item menu-items">
-            <a class="nav-link" th:href="@{/indexInyange}">
+            <a class="nav-link" th:href="@{/index}">
               <span class="menu-icon">
                 <i class="mdi mdi-domain"></i>
               </span>
@@ -101,19 +101,19 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" th:href="@{/api/distribution/addNewSchool}">
+            <a class="nav-link" th:href="@{/api/school/addNewSchool}">
               <span class="menu-icon">
-                <i class="mdi mdi-widgets"></i>
+                <i class="mdi mdi-school"></i>
               </span>
-              <span class="menu-title">Add new Distribution</span>
+              <span class="menu-title">Add new School</span>
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" th:href="@{/api/distribution/all}">
+            <a class="nav-link" th:href="@{/api/school/all}">
               <span class="menu-icon">
-                <i class="mdi mdi-widgets"></i>
+                <i class="mdi mdi-school"></i>
               </span>
-              <span class="menu-title">View Distribution</span>
+              <span class="menu-title">View School</span>
             </a>
           </li>
           <!-- <li class="nav-item menu-items">
@@ -204,60 +204,31 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
                 </div>
               </div>
             </div>
-            <div class="row ">
-              <div class="col-12 grid-margin">
+            <div class="row">
+              <div class="col-md-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">School</h4>
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th> Tariki amata yagereye ku kigo-ECD </th>
-                            <th> Izina ry'ikigo cyamashuri </th>
-                            <th> Umurenge </th>
-                            <th> Akarere </th>
-                            <th> Purake y'ikinyabiziga </th>
-                            <th> Isaha ihagereye </th>
-                            <th> Amazina y'Umushoferi/Motati </th>
-                            <th> Ingano y'amata yakirirwe(mu mibare) </th>
-                            <th> Ingano y'amata yakirirwe(mu magambo)</th>
-                            <th> igihe amata azamara </th>
-                            <th> Umukuru wikigo </th>
-                            <th> Ushinzwe imirire </th>
-                            <th> Uhagarariye inyange </th>
-                            <th> Umuyobozi wakagali/Umurenge </th>
-                            <th> Action </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr th:each="distribution:${listdistributions}">
-                            <td th:text="${distribution.arrivalDate}"></td>
-                                                  <td th:text="${distribution.schools.schoolName}"></td>
-                                                  <td th:text="${distribution.sector}"></td>
-                                                  <td th:text="${distribution.district}"></td>
-                                                  <td th:text="${distribution.plateNo}"></td>
-                                                  <td th:text="${distribution.arrivalTime}"></td>
-                                                  <td th:text="${distribution.driverName}"></td>
-                                                  <td th:text="${distribution.Liters}"></td>
-                                                  <td th:text="${distribution.litersDescription}"></td>
-                                                  <td th:text="${distribution.lastingDays}"></td>
-                                                  <td th:text="${distribution.headOfSchool}"></td>
-                                                  <td th:text="${distribution.headOfFood}"></td>
-                                                  <td th:text="${distribution.headOfInyange}"></td>
-                                                  <td th:text="${distribution.headOfKigaliDepartment}"></td>
-                                                  <td>
-                                                    <a th:href="@{/api/distribution/updateDistributionById/{id}(id=${distribution.id})}" id="editButton" title="Edit" class="btn btn-success btn-xs">
-                                                      <i class="mdi mdi-pencil"></i>
-                                                    </a>
-                                                    <a th:href="@{/api/distribution/deleteDistributionById/{id}(id=${distribution.id})}" title="Remove Student" class="btn btn-danger btn-xs">
-                                                      <i class="mdi mdi-trash-can"></i>
-                                                  </a>
-                                                  </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
+                    <h4 class="card-title">Add School</h4>
+                    <p class="card-description"> School Details </p>
+                    <form class="form-sample" th:action="@{/api/school/saveSchool}" th:object="${school}" method="post">
+                      <div class="form-group">
+                        <input type="hidden" class="form-control" th:field="*{id}" style="background-color: #ffffff; color: #000000;" />
+                        <label for="exampleInputUsername1">izina ry' ikigo</label>
+                        <input type="text" class="form-control" th:field="*{schoolName}" style="background-color: #ffffff; color: #000000;" />
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Umurenge</label>
+                        <input type="text" class="form-control" th:field="*{sector}" style="background-color: #ffffff; color: #000000;" />
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Akarere</label>
+                        <input type="text" class="form-control" th:field="*{district}" style="background-color: #ffffff; color: #000000;" />
+                      </div>
+                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                      <button class="btn btn-dark">
+                        <a th:href="@{/api/school/all}" style="text-decoration: none; color: inherit;">Cancel</a>
+                    </button>
+                    </form>
                   </div>
                 </div>
               </div>

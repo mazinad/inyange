@@ -49,7 +49,10 @@ public class SchoolController {
     }
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/updateSchoolById/{id}")
-    public String updateSchoolById(@PathVariable(value = "id") long id, Model model) {
+    public String updateSchoolById(@PathVariable(value = "id") long id, Model model,Authentication authentication) {
+        String findUsername=authentication.getName();
+        User user=userService.findByEmail(findUsername);
+        model.addAttribute("userLogged", user);
         School school = schoolService.findSchoolById(id);
         model.addAttribute("school", school);
         return "updateSchool";

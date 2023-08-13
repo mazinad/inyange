@@ -75,20 +75,28 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
             </a>
           </li> -->
           <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" th:href="@{/indexInyange}">
               <span class="menu-icon">
-                <i class="mdi mdi-laptop"></i>
+                <i class="mdi mdi-domain"></i>
               </span>
-              <span class="menu-title">View</span>
-              <i class="menu-arrow"></i>
+              <span class="menu-title">Main page</span>
             </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" th:href="@{/api/school/addNewSchool}">Add School</a></li>
-                <li class="nav-item"> <a class="nav-link" th:href="@{/api/school/addNewSchool}">View School</a></li>
-                <!-- <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li> -->
-              </ul>
-            </div>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" th:href="@{/api/distribution/addNewSchool}">
+              <span class="menu-icon">
+                <i class="mdi mdi-widgets"></i>
+              </span>
+              <span class="menu-title">Add new Distribution</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" th:href="@{/api/distribution/all}">
+              <span class="menu-icon">
+                <i class="mdi mdi-widgets"></i>
+              </span>
+              <span class="menu-title">View Distribution</span>
+            </a>
           </li>
           <!-- <li class="nav-item menu-items">
             <a class="nav-link" href="pages/forms/basic_elements.html">
@@ -336,7 +344,9 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
                                   </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary mr-2">Save</button>
-                                <button class="btn btn-dark">Cancel</button>
+                                <button class="btn btn-dark">
+                                  <a th:href="@{/api/distribution/all}" style="text-decoration: none; color: inherit;">Cancel</a>
+                              </button>
                               </form>
                             </div>
                           </div>
