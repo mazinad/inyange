@@ -116,6 +116,38 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
               <span class="menu-title">View School</span>
             </a>
           </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" th:href="@{/api/distribution/addNewDistribution}">
+              <span class="menu-icon">
+                <i class="mdi mdi-widgets"></i>
+              </span>
+              <span class="menu-title">Add new Distribution</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" th:href="@{/api/distribution/all}">
+              <span class="menu-icon">
+                <i class="mdi mdi-widgets"></i>
+              </span>
+              <span class="menu-title">View Distribution</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" th:href="@{/api/distributor}">
+              <span class="menu-icon">
+                <i class="mdi mdi-widgets"></i>
+              </span>
+              <span class="menu-title">Add new Distributor</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" th:href="@{/logout}">
+              <span class="menu-icon">
+                <i class="mdi mdi-exit-to-app"></i>
+              </span>
+              <span class="menu-title">Logout</span>
+            </a>
+          </li>
           <!-- <li class="nav-item menu-items">
             <a class="nav-link" href="pages/forms/basic_elements.html">
               <span class="menu-icon">
@@ -216,6 +248,8 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
                             <th> School Name </th>
                             <th> School District </th>
                             <th> School Sector </th>
+                            <th> School Cell </th>
+                            <th> School Province </th>
                             <th>Action</th>
                           </tr>
                         </thead>
@@ -224,6 +258,8 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
                             <td th:text="${school.schoolName}"></td>
                             <td th:text="${school.sector}"></td>
                             <td th:text="${school.district}"></td>
+                            <td th:text="${school.cell}"></td>
+                            <td th:text="${school.province}"></td>
                             <td>
                               <a th:href="@{/api/school/updateSchoolById/{id}(id=${school.id})}" id="editButton" title="Edit" class="btn btn-success btn-xs">
                                 <i class="mdi mdi-pencil"></i>

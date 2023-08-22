@@ -101,7 +101,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" th:href="@{/api/distribution/addNewSchool}">
+            <a class="nav-link" th:href="@{/api/distribution/addNewDistribution}">
               <span class="menu-icon">
                 <i class="mdi mdi-widgets"></i>
               </span>
@@ -114,6 +114,38 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
                 <i class="mdi mdi-widgets"></i>
               </span>
               <span class="menu-title">View Distribution</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" th:href="@{/api/distributor}">
+              <span class="menu-icon">
+                <i class="mdi mdi-widgets"></i>
+              </span>
+              <span class="menu-title">Add new Distributor</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" th:href="@{/api/school/addNewSchool}">
+              <span class="menu-icon">
+                <i class="mdi mdi-school"></i>
+              </span>
+              <span class="menu-title">Add new School</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" th:href="@{/api/school/all}">
+              <span class="menu-icon">
+                <i class="mdi mdi-school"></i>
+              </span>
+              <span class="menu-title">View School</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" th:href="@{/logout}">
+              <span class="menu-icon">
+                <i class="mdi mdi-exit-to-app"></i>
+              </span>
+              <span class="menu-title">Logout</span>
             </a>
           </li>
           <!-- <li class="nav-item menu-items">
@@ -208,7 +240,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
               <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">School</h4>
+                    <h4 class="card-title">Distribution</h4>
                     <div class="table-responsive">
                       <table class="table">
                         <thead>

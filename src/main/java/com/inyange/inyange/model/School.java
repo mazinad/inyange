@@ -19,6 +19,8 @@ public class School {
     private String schoolName;
     private String sector;
     private String district;
+    private String cell;
+    private String province;
     @OneToMany(mappedBy = "schools",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     List<Distribution> distributions;
     public Long getId() {
@@ -51,5 +53,20 @@ public class School {
     public void setDistributions(List<Distribution> distributions) {
         this.distributions = distributions;
     }
-        
+
+    public String getCell() {
+        return cell;
+    }
+
+    public void setCell(String cell) {
+        this.cell = cell;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
 }

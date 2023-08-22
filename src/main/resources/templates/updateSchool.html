@@ -116,6 +116,38 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
               <span class="menu-title">View School</span>
             </a>
           </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" th:href="@{/api/distribution/addNewDistribution}">
+              <span class="menu-icon">
+                <i class="mdi mdi-widgets"></i>
+              </span>
+              <span class="menu-title">Add new Distribution</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" th:href="@{/api/distribution/all}">
+              <span class="menu-icon">
+                <i class="mdi mdi-widgets"></i>
+              </span>
+              <span class="menu-title">View Distribution</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" th:href="@{/api/distributor}">
+              <span class="menu-icon">
+                <i class="mdi mdi-widgets"></i>
+              </span>
+              <span class="menu-title">Add new Distributor</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" th:href="@{/logout}">
+              <span class="menu-icon">
+                <i class="mdi mdi-exit-to-app"></i>
+              </span>
+              <span class="menu-title">Logout</span>
+            </a>
+          </li>
           <!-- <li class="nav-item menu-items">
             <a class="nav-link" href="pages/forms/basic_elements.html">
               <span class="menu-icon">
@@ -223,6 +255,14 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
                       <div class="form-group">
                         <label for="exampleInputPassword1">Akarere</label>
                         <input type="text" class="form-control" th:field="*{district}" style="background-color: #ffffff; color: #000000;" />
+                      </div>
+                      <div class="form-group">
+                      <label for="exampleInputEmail1">Umudugudu</label>
+                      <input type="text" class="form-control" th:field="*{cell}" style="background-color: #ffffff; color: #000000;" />
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Intara</label>
+                        <input type="text" class="form-control" th:field="*{province}" style="background-color: #ffffff; color: #000000;" />
                       </div>
                       <button type="submit" class="btn btn-primary mr-2">Submit</button>
                       <button class="btn btn-dark">

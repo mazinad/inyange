@@ -83,4 +83,11 @@ public class MainController {
 	// 			}
 	// 	return "userExpense";
 	// }
+	@GetMapping("/api/addDistibutor")
+	public String addInyange(Model model,Authentication authentication){
+		String username=authentication.getName();
+		User user =userService.findByEmail(username);
+		model.addAttribute("userLogged",user);
+		return "addDistributor";
+	}
 }

@@ -1,6 +1,9 @@
 package com.inyange.inyange.controller;
 
+import com.inyange.inyange.repository.DistributionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +19,10 @@ import com.inyange.inyange.service.DistributionService;
 import com.inyange.inyange.service.SchoolService;
 import com.inyange.inyange.service.UserService;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.InputStream;
+
 @Controller
 @RequestMapping("/api/distribution")
 public class DistributionController {
@@ -25,6 +32,8 @@ public class DistributionController {
     private SchoolService schoolService;
     @Autowired
     private UserService userService;
+    @Autowired
+    private DistributionRepository distributionRepository;
     @GetMapping("/all")
     public String findAllDistribution(Model model,Authentication authentication) {
         String findUserName=authentication.getName();
@@ -67,5 +76,7 @@ public class DistributionController {
         this.distributionService.deleteDistribution(id);
         return "redirect:/api/distribution/all";
     }
+
+
 
 }
